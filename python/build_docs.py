@@ -26,7 +26,7 @@ if __name__ == "__main__":
     ARGS = PARSER.parse_args()
 
     try:
-        subprocess.run("moonwave help", stdout=subprocess.PIPE, timeout=1, check=True)
+        subprocess.run("moonwave --help", stdout=subprocess.PIPE, timeout=1, check=True)
     except subprocess.TimeoutExpired as e:
         print(f"Moonwave took too long to respond!")
         sys.exit(1)
