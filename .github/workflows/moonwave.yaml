@@ -1,4 +1,4 @@
-name: Moonwave
+name: moonwave
 
 on:
   workflow_dispatch:

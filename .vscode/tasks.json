@@ -2,6 +2,27 @@
     // See https://go.microsoft.com/fwlink/?LinkId=733558
     // for the documentation about the tasks.json format
     "version": "2.0.0",
-    "tasks": [],
+    "tasks": [
+        {
+            "label": "stylua",
+            "type": "shell",
+            "command": "python python/stylua.py",
+        },
+        {
+            "label": "selene",
+            "type": "shell",
+            "command": "python python/selene.py",
+        },
+        {
+            "label": "Dev - Docs",
+            "type": "shell",
+            "command": "python python/build_docs.py -d"
+        },
+        {
+            "label": "Publish - Docs",
+            "type": "shell",
+            "command": "python python/build_docs.py -P"
+        }
+    ],
     "inputs": []
 }

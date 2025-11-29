@@ -38,7 +38,7 @@ if __name__ == "__main__":
 
     if ARGS.publish:
         subprocess.run(
-            f"moonwave build --publish --code {mchexio.get_sources(ARGS.places)}"
+            f"moonwave build --publish --code {mchexio.get_sources(ARGS.places)} --out-dir {ARGS.out_dir}"
         )
         sys.exit(0)
 
