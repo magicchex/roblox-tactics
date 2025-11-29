@@ -1,0 +1,73 @@
+{
+  "name": "Roblox Tactics",
+  "gameId": 8922612473,
+  "placeId": 83437755688250,
+  "globIgnorePaths": [
+    "**/.gitkeep",
+    "**/*.test*"
+  ],
+  "tree": {
+    "$className": "DataModel",
+    "ReplicatedStorage": {
+      "$className": "ReplicatedStorage",
+      "Asphalt": {
+        "$className": "Folder",
+        "$path": "../../Asphalt"
+      },
+      "DevWally": {
+        "$className": "Folder",
+        "$path": "../../DevPackages"
+      },
+      "Wally": {
+        "$className": "Folder",
+        "$path": "../../Packages/"
+      },
+      "$path": "src/shared"
+    },
+    "ServerScriptService": {
+      "$className": "ServerScriptService",
+      "Wally": {
+        "$className": "Folder",
+        "$path": "../../ServerPackages"
+      },
+      "$path": "src/server"
+    },
+    "StarterPlayer": {
+      "$className": "StarterPlayer",
+      "StarterPlayerScripts": {
+        "$className": "StarterPlayerScripts",
+        "$path": "src/client/player"
+      },
+      "StarterCharacterScripts": {
+        "$className": "StarterCharacterScripts",
+        "$path": "src/client/character"
+      }
+    },
+    "Workspace": {
+      "$className": "Workspace",
+      "$properties": {
+        "FilteringEnabled": true
+      }
+    },
+    "Lighting": {
+      "$className": "Lighting",
+      "$properties": {
+        "Ambient": [
+          0,
+          0,
+          0
+        ],
+        "Brightness": 2,
+        "GlobalShadows": true,
+        "Outlines": false,
+        "Technology": "Voxel"
+      }
+    },
+    "SoundService": {
+      "$className": "SoundService",
+      "$properties": {
+        "RespectFilteringEnabled": true
+      }
+    }
+  }
+}

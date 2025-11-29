@@ -11,7 +11,7 @@ content = false
 
 [inputs.assets]
 path = "public/**/*"
-output_path = "src/shared/Asphalt"
+output_path = "Asphalt"
 bleed = true
 warn_each_duplicate = true
 
