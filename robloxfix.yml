@@ -2,4 +2,4 @@
 base: "roblox"
 globals:
   require:
-    - type: any
+      any: true
