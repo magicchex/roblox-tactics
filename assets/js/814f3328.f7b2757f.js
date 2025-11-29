@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkdocs=self.webpackChunkdocs||[]).push([[472],{5513:e=>{e.exports=JSON.parse('{"title":"Recent posts","items":[{"title":"Devlog #1","permalink":"/roblox-tactics/blog/2025/11/29/devlog-1","unlisted":false,"date":"2025-11-29T00:00:00.000Z"}]}')}}]);

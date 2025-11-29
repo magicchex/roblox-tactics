@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <id>https://magicchex.github.io/roblox-tactics/blog</id>
+    <title>roblox-tactics Blog</title>
+    <updated>2025-11-29T00:00:00.000Z</updated>
+    <generator>https://github.com/jpmonette/feed</generator>
+    <link rel="alternate" href="https://magicchex.github.io/roblox-tactics/blog"/>
+    <subtitle>roblox-tactics Blog</subtitle>
+    <entry>
+        <title type="html"><![CDATA[Devlog #1]]></title>
+        <id>https://magicchex.github.io/roblox-tactics/blog/2025/11/29/devlog-1</id>
+        <link href="https://magicchex.github.io/roblox-tactics/blog/2025/11/29/devlog-1"/>
+        <updated>2025-11-29T00:00:00.000Z</updated>
+        <author>
+            <name>Chee Nou Vang</name>
+        </author>
+    </entry>
+</feed>

@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkdocs=self.webpackChunkdocs||[]).push([[895],{4410:s=>{s.exports=JSON.parse('{"sourceUrl":"https://github.com/magicchex/roblox-tactics/blob/master","baseUrl":"/roblox-tactics/","classOrder":[],"apiCategories":[]}')}}]);

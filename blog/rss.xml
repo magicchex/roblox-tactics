@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0">
+    <channel>
+        <title>roblox-tactics Blog</title>
+        <link>https://magicchex.github.io/roblox-tactics/blog</link>
+        <description>roblox-tactics Blog</description>
+        <lastBuildDate>Sat, 29 Nov 2025 00:00:00 GMT</lastBuildDate>
+        <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
+        <generator>https://github.com/jpmonette/feed</generator>
+        <language>en</language>
+        <item>
+            <title><![CDATA[Devlog #1]]></title>
+            <link>https://magicchex.github.io/roblox-tactics/blog/2025/11/29/devlog-1</link>
+            <guid>https://magicchex.github.io/roblox-tactics/blog/2025/11/29/devlog-1</guid>
+            <pubDate>Sat, 29 Nov 2025 00:00:00 GMT</pubDate>
+        </item>
+    </channel>
+</rss>
