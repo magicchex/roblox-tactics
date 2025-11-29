@@ -1,11 +1,10 @@
 {
 	"name": "roblox-template",
-	"version": "1.0.0",
 	"description": "An roblox template",
+	"author": "magicchex",
+	"license": "MIT",
+	"version": "1.0.0",
 	"private": true,
-	"directories": {
-		"doc": "docs"
-	},
 	"scripts": {
 		"rbxtsc watch": "rbxtsc -w",
 		"rbxtsc build": "rbxtsc",
@@ -17,12 +16,10 @@
 	},
 	"repository": {
 		"type": "git",
-		"url": "git+https://github.com/magicchex/roblox-template.git"
+		"url": "git+https://github.com/magicchex/roblox-tactics"
 	},
-	"author": "magicchex",
-	"license": "MIT",
 	"bugs": {
-		"url": "https://github.com/magicchex/roblox-template/issues"
+		"url": "https://github.com/magicchex/roblox-tactics/issues"
 	},
 	"homepage": "https://github.com/magicchex/roblox-template#readme",
 	"devDependencies": {
