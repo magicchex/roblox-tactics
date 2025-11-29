@@ -1,7 +1,10 @@
-name: Moonwave - Manual
+name: Moonwave
 
 on:
   workflow_dispatch:
+  push:
+    branches:
+      - master
 
 env:
   GIT_NO_REPLY_EMAIL: actions@github.com
@@ -30,6 +33,8 @@ jobs:
           git config --global user.email $GIT_NO_REPLY_EMAIL
           git config --global user.name $GIT_USERNAME
           git remote set-url origin https://x-access-token:$GITHUB_TOKEN@github.com/$REPOSITORY_NAME.git
-
+      - uses: actions/setup-python@v6
+        with:
+            python-version: '3.14.0'
       - name: Deploy Documentation
-        run: moonwave build --publish --code $SOURCE_FOLDER
+        run: python python/build_docs.py --publish
