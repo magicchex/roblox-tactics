@@ -11,7 +11,7 @@
         {
             "label": "Asphalt upload roblox",
             "type": "shell",
-            "command": "asphalt sync --target cloud --api-key ${input:asphaltApiKey}"
+            "command": "asphalt sync --target cloud --api-key ${env:RBLX_ASPHALT}"
         },
         {
             "label": "__rbxtscbuild",

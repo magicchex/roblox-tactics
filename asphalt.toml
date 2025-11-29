@@ -1,7 +1,7 @@
 #:schema https://raw.githubusercontent.com/jackTabsCode/asphalt/refs/heads/main/schema.json
 [creator]
-type = "user" # user | group
-id = 0
+type = "user"  # user | group
+id = 337566660
 
 [codegen]
 typescript = true

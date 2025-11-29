@@ -1,13 +1,4 @@
 # Setup
-## Configure GitHub Workflows
-### `ci.yaml`
-Add two variables:
-1. `UNIVERSE_ID` : `number`
-2. `PLACE_ID` : `number`
-
-Add a secret:
-1. `PLACE_PUBLISHING_KEY` : `string`
-   * This will be your [api key](https://create.roblox.com/docs/reference/cloud/universes-api/v1).
 ## Install toolkit manager
 Install [Rokit](https://github.com/rojo-rbx/rokit) as your tool manager on your system.
 ### Rokit
