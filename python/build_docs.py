@@ -28,10 +28,10 @@ if __name__ == "__main__":
     try:
         subprocess.run("moonwave help", stdout=subprocess.PIPE, timeout=1, check=True)
     except subprocess.TimeoutExpired as e:
-        print(f"{e.with_traceback()}\n\nMoonwave took too long to respond!")
+        print(f"Moonwave took too long to respond!")
         sys.exit(1)
     except subprocess.CalledProcessError as e:
-        print(f"{e.with_traceback()}\n\nFail to run Moonwave")
+        print(f"Fail to run Moonwave")
         sys.exit(1)
 
     assert os.path.isdir(ARGS.places), "Invalid places directory!"
@@ -54,8 +54,6 @@ if __name__ == "__main__":
             check=True,
         )
     except subprocess.CalledProcessError as e:
-        print(
-            f"{e.with_traceback()}\n\nMoonwave could not generate docs! There are errors!"
-        )
+        print(f"Moonwave could not generate docs! There are errors!")
         sys.exit(1)
 sys.exit(0)

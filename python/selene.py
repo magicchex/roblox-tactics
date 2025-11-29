@@ -12,7 +12,7 @@ def verify_documents(path: str):
             check=True,
         )
     except subprocess.CalledProcessError as e:
-        print(f'\n\nSelene couldn\'t verify validity of document, "{path}"!')
+        print(f'Selene couldn\'t verify validity of document, "{path}"!')
     return
 
 
@@ -31,10 +31,10 @@ if __name__ == "__main__":
     try:
         subprocess.run("selene --help", stdout=subprocess.PIPE, timeout=1, check=True)
     except subprocess.TimeoutExpired as e:
-        print(f"{e.with_traceback()}\n\nSelene took too long to respond!")
+        print(f"Selene took too long to respond!")
         sys.exit(1)
     except subprocess.CalledProcessError as e:
-        print(f"{e.with_traceback()}\n\nFail to run Selene")
+        print(f"Fail to run Selene")
         sys.exit(1)
 
     assert os.path.isdir(ARGS.places), "Invalid places directory!"
