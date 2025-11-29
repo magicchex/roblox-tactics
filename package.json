@@ -21,7 +21,7 @@
 	"bugs": {
 		"url": "https://github.com/magicchex/roblox-tactics/issues"
 	},
-	"homepage": "https://github.com/magicchex/roblox-template#readme",
+	"homepage": "https://chee-vang.com/roblox-tactics",
 	"devDependencies": {
 		"@eslint/eslintrc": "^3.3.1",
 		"@eslint/js": "^9.39.0",
