@@ -1,0 +1,207 @@
+{
+    // See https://go.microsoft.com/fwlink/?LinkId=733558
+    // for the documentation about the tasks.json format
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Asphalt studio sync",
+            "type": "shell",
+            "command": "asphalt sync --target studio"
+        },
+        {
+            "label": "Asphalt upload roblox",
+            "type": "shell",
+            "command": "asphalt sync --target cloud --api-key ${input:asphaltApiKey}"
+        },
+        {
+            "label": "__rbxtscbuild",
+            "type": "shell",
+            "command": "npm run 'rbxtsc build' -- --rojo ${input:projectJson}",
+            "hide": true,
+            "group": "build"
+        },
+        {
+            "label": "__wallyinstall",
+            "type": "shell",
+            "windows": {
+                "command": "if (Test-Path 'wally.toml') { wally install } else { Write-Host 'Skipped Wally.' }"
+            },
+            "linux": {
+                "command": "if [ -f wally.toml ]; then wally install; else echo 'Skipped Wally.'; fi"
+            },
+            "hide": true,
+            "group": "build"
+        },
+        {
+            "label": "__rojobuild",
+            "type": "shell",
+            "command": "rojo build --output out/${input:placeFilePathNoExtension}.${input:placeFileExtension} ${input:projectJson}",
+            "hide": true,
+            "group": "build"
+        },
+        {
+            "label": "__moonwavebuild",
+            "type": "shell",
+            "command": "npm run 'moonwave build' -- --out-dir out/moonwave",
+            "hide": true,
+            "group": "build"
+        },
+        {
+            "label": "Build Place",
+            "dependsOn": ["__wallyinstall", "__rbxtscbuild","__rojobuild","__moonwavebuild"],
+            "dependsOrder": "sequence",
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+        },
+        {
+            "label": "__rbxtscwatch",
+            "type": "shell",
+            "command": "npm run 'rbxtsc watch' -- --rojo ${input:projectJsonRbxTS}",
+            "hide": true,
+            "presentation": {
+                "group": "watchTask"
+            }
+        },
+        {
+            "label": "__rojoserve",
+            "type": "shell",
+            "command": "rojo serve ${input:projectJsonRojo}",
+            "hide": true,
+            "presentation": {
+                "group": "watchTask"
+            }
+        },
+        {
+            "label": "__moonwavedev",
+            "type": "shell",
+            "command": "npm run 'moonwave dev'",
+            "hide": true,
+            "presentation": {
+                "group": "watchTask"
+            }
+        },
+        {
+            "label": "Watch Place",
+            "dependsOn": ["__rbxtscwatch", "__rojoserve", "__moonwavedev"],
+            "dependsOrder": "parallel",
+        },
+        {
+            "label": "__lintluau",
+            "type": "shell",
+            "command": "selene src",
+            "hide": true,
+            "presentation": {
+                "group": "lintTask"
+            }
+        },
+        {
+            "label": "__linttypescript",
+            "type": "shell",
+            "command": "npm run 'eslint'",
+            "hide": true,
+            "presentation": {
+                "group": "lintTask"
+            }
+        },
+        {
+            "label": "Lint",
+            "dependsOn": ["__lintluau", "__linttypescript"],
+            "dependsOrder": "parallel",
+        },
+        {
+            "label": "__formatluau",
+            "type": "shell",
+            "command": "stylua src",
+            "hide": true,
+            "presentation": {
+                "group": "formatTask"
+            }
+        },
+        {
+            "label": "__formattypescript",
+            "type": "shell",
+            "command": "npm run 'prettier write'",
+            "hide": true,
+            "presentation": {
+                "group": "formatTask"
+            }
+        },
+        {
+            "label": "Format",
+            "dependsOn": ["__formatluau", "__formattypescript"],
+            "dependsOrder": "parallel"
+        }
+    ],
+    "inputs": [
+        {
+            "id": "placeFilePathNoExtension",
+            "type": "promptString",
+            "description": "The filepath without the .rbxl(x) extension",
+            "default": "place"
+        },
+        {
+            "id": "placeFileExtension",
+            "type": "pickString",
+            "description": "Choose the file extension of your place file.",
+            "options": ["rbxl", "rbxlx"],
+            "default": "rbxl"
+        },
+        {
+            "id": "placePublishingKey",
+            "type": "promptString",
+            "description": "Your Place Publishing API Key"
+        },
+        {
+            "id": "universeId",
+            "type": "promptString",
+            "description": "Your Universe ID"
+        },
+        {
+            "id": "asphaltApiKey",
+            "type": "promptString",
+            "description": "Your API Key for Asphalt synchronization",
+            "password": true
+        },
+        {
+            "id": "assetDirectory",
+            "type": "promptString",
+            "description": "Your Asset Directory"
+        },
+        {
+            "id": "assetId",
+            "type": "promptString",
+            "description": "Your Asset ID"
+        },
+        {
+            "id": "rbxcloudPlaceFilepath",
+            "type": "promptString",
+            "description": "The absolute or relative path of the place file to upload."
+        },
+        {
+            "id": "versionType",
+            "type": "pickString",
+            "description": "saved = only upload to Roblox; published = upload and release it to the public",
+            "options": ["saved", "published"]
+        },
+        {
+            "id": "projectJson",
+            "type": "promptString",
+            "description": "The path of an *.project.json file.",
+            "default": "default.project.json"
+        },
+        {
+            "id": "projectJsonRbxTS",
+            "type": "promptString",
+            "description": "(roblox-ts) The path of an *.project.json file.",
+            "default": "default.project.json"
+        },
+        {
+            "id": "projectJsonRojo",
+            "type": "promptString",
+            "description": "(Rojo) The path of an *.project.json file.",
+            "default": "default.project.json"
+        }
+    ]
+}

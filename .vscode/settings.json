@@ -1,0 +1,74 @@
+{
+  "luau-lsp.plugin.enabled": true,
+  "[luau]": {
+    "editor.defaultFormatter": "JohnnyMorganz.stylua",
+    "editor.formatOnSave": true
+  },
+  "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.formatOnSave": true
+  },
+  "[typescriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.formatOnSave": true
+  },
+  "eslint.run": "onType",
+  "eslint.format.enable": false,
+  "eslint.useFlatConfig": true,
+  "code-runner.executorMapByFileExtension": {
+    ".luau": "lune run $fullFileName"
+  },
+  "json.schemas": [
+    {
+      "fileMatch": [
+        "**/*.model.json"
+      ],
+      "url": "https://raw.githubusercontent.com/magicchex/json-schema/refs/heads/main/rbx-rojo/model.schema.json"
+    },
+    {
+      "fileMatch": [
+        "**/*.meta.json"
+      ],
+      "url": "https://raw.githubusercontent.com/magicchex/json-schema/refs/heads/main/rbx-rojo/meta.schema.json"
+    },
+    {
+      "fileMatch": [
+        "**/*.project.json"
+      ],
+      "url": "https://raw.githubusercontent.com/magicchex/json-schema/refs/heads/main/rbx-rojo/project.schema.json"
+    }
+  ],
+  "workbench.editor.customLabels.enabled": true,
+  "workbench.editor.customLabels.patterns": {
+    "**/init.**.luau": "${dirname}",
+    "**/init.luau": "${dirname}",
+    "**/**.**.luau": "${filename}",
+    "**/index.**.ts": "${dirname}",
+    "**/index.ts": "${dirname}",
+    "**/**.**.ts": "${filename}"
+  },
+  "files.associations": {
+    ".luaurc": "json"
+  },
+  "typescript.tsc.autoDetect": "off",
+  "files.exclude": {
+    "node_modules": false,
+    "include": false,
+    ".github": false,
+    "sourcemap.json": false,
+    "selene.toml": false,
+    "stylua.toml": false,
+    ".styluaignore": false,
+    "tsconfig.json": false,
+    "package-lock.json": false,
+    "moonwave.toml": false,
+    "blog": false,
+    "docs": false,
+    ".prettierignore": false,
+    ".prettierrc": false,
+    ".eslintrc": false,
+    ".luaurc": false,
+    "asphalt.lock.toml": false
+  },
+  "taskManager.exclude": "^__"
+}

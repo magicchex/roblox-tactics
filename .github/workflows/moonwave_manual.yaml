@@ -1,0 +1,35 @@
+name: Moonwave - Manual
+
+on:
+  workflow_dispatch:
+
+env:
+  GIT_NO_REPLY_EMAIL: actions@github.com
+  GIT_USERNAME: GitHub Actions
+  REPOSITORY_NAME: ${{ github.repository }}
+  SOURCE_FOLDER: src
+  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+jobs:
+  deploy-documentation:
+    permissions:
+      contents: write
+      pages: write
+    runs-on: ubuntu-22.04
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Install Node
+        uses: actions/setup-node@v4
+
+      - name: Install Moonwave
+        run: npm install --global moonwave
+
+      - name: Moonwave Git Configuration
+        run: |
+          git config --global user.email $GIT_NO_REPLY_EMAIL
+          git config --global user.name $GIT_USERNAME
+          git remote set-url origin https://x-access-token:$GITHUB_TOKEN@github.com/$REPOSITORY_NAME.git
+
+      - name: Deploy Documentation
+        run: moonwave build --publish --code $SOURCE_FOLDER

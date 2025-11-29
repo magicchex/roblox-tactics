@@ -1,0 +1,2 @@
+std = "robloxfix"
+exclude = ["**Asphalt**", "node_modules", "out", "include", "build"]

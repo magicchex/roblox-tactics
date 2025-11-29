@@ -1,0 +1,41 @@
+name: stylua
+
+on:
+  push:
+    paths: [src/**/*.luau]
+env:
+  GIT_NO_REPLY_EMAIL: actions@github.com
+  GIT_USERNAME: GitHub Actions
+  REPOSITORY_NAME: ${{ github.repository }}
+  SOURCE_FOLDER: src
+  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+jobs:
+  stylua:
+    permissions:
+      contents: write
+    runs-on: ubuntu-22.04
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Install Rokit
+        uses: CompeyDev/setup-rokit@v0.1.2
+        with:
+          version: v1.0.0 # rokit git tag
+          cache: false
+
+      - name: Install Rokit Tools
+        run: rokit install --no-trust-check
+      - name: stylua
+        run: stylua $SOURCE_FOLDER
+      - name: Commit any changes made by Stylua
+        run: |
+          if [[ $(git diff) != "" ]]; then
+            git config --global user.name $GIT_USERNAME
+            git config --global user.email $GIT_NO_REPLY_EMAIL
+            git add .
+            git commit -m "Apply code formatting"
+            git push
+            echo "Stylua made changes"
+          else
+            echo "No stylua changes"
+          fi

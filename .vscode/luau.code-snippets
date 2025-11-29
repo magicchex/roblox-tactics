@@ -1,0 +1,128 @@
+{
+    "Inhertiance": {
+        "scope": "luau",
+        "body": [
+            "local Public = {}",
+            "Public.__index = Public",
+            "${1:P}",
+            "",
+            "type self = {",
+            "\t${5:PrivateProperty}: ${7:PrivateDataType}",
+            "}",
+            "",
+            "local $TM_FILENAME_BASE = setmetatable({},Public)",
+            "$TM_FILENAME_BASE.__index = $TM_FILENAME_BASE",
+            "$TM_FILENAME_BASE.${2:StaticProperty} = ${3:StaticValue}",
+            "",
+            "function $TM_FILENAME_BASE.new(): typeof(setmetatable({} :: self, Public))",
+            "\tlocal self = {} :: self",
+            "\tself.${5:PrivateProperty} = ${6:PrivatePropertyValue}",
+            "\treturn setmetatable(self, Public)",
+            "end",
+            "",
+            "${4:func}",
+            "",
+            "return $TM_FILENAME_BASE"
+        ],
+        "description": "Inheritance Template",
+        "isFileTemplate": true
+    },
+    "Public Class Method": {
+        "scope": "luau,lua",
+        "prefix": [
+            "function",
+            "pm"
+        ],
+        "body": [
+            "function Public${1|.,:|}${2:PublicMethodName}(${3:classParameters}): ${4:returnType}",
+            "\t${5}",
+            "\treturn ${6}",
+            "end"
+        ]
+    },
+    "Static Class Method": {
+        "scope": "luau,lua",
+        "prefix": "function",
+        "body": [
+            "function $TM_FILENAME_BASE${1|.,:|}${2:classMethodName}(${3:classParameters}): ${4:returnType}",
+            "\t${5}",
+            "\treturn ${6}",
+            "end"
+        ],
+    },
+    "Private Class Method": {
+        "scope": "luau,lua",
+        "prefix": [
+            "function",
+            "sm"
+        ],
+        "body": [
+            "self.${1:PrivateMethodName} = function(${2:classParameters})",
+            "\t${3}",
+            "\treturn ${4}",
+            "end"
+        ]
+    },
+    "Function": {
+        "scope": "luau,lua",
+        "prefix": "fend",
+        "body": [
+            "function${1: ${2:methodName}()}",
+            "\t${3}",
+            "end"
+        ]
+    },
+    "forKeyValue": {
+        "scope": "luau,lua",
+        "prefix": "fork",
+        "body": [
+            "for k, v in pairs(${1:{\\}}) do",
+            "\t${2}",
+            "end"
+        ]
+    },
+    "forIValue": {
+        "scope": "luau,lua",
+        "prefix": "fori",
+        "body": [
+            "for i, v in ipairs(${1:{\\}}) do",
+            "\t${2}",
+            "end"
+        ]
+    },
+    "forRange": {
+        "scope": "luau,lua",
+        "prefix": "forr",
+        "body": [
+            "for i = 1, ${1:10}, ${2:1} do",
+            "\t${3}",
+            "end"
+        ]
+    },
+    "doWhile": {
+        "scope": "luau,lua",
+        "prefix": [
+            "doWhile",
+            "repeat"
+        ],
+        "body": [
+            "repeat",
+            "\t${1:print(\"hello!\")}",
+            "until ${2:true}"
+        ]
+    },
+    "whileDo": {
+        "scope": "luau,lua",
+        "prefix": "whileDo",
+        "body": [
+            "while true do",
+            "\t${1:print(\"hello!\")}",
+            "end"
+        ]
+    },
+    "GetService": {
+        "scope": "luau",
+        "prefix": "getservice",
+        "body": "game:GetService(\"${1}\")"
+    },
+}

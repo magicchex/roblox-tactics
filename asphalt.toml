@@ -1,0 +1,19 @@
+#:schema https://raw.githubusercontent.com/jackTabsCode/asphalt/refs/heads/main/schema.json
+[creator]
+type = "user" # user | group
+id = 0
+
+[codegen]
+typescript = true
+style = "flat"
+strip_extension = false
+content = false
+
+[inputs.assets]
+path = "public/**/*"
+output_path = "src/shared/Asphalt"
+bleed = true
+warn_each_duplicate = true
+
+[inputs.assets.web]
+# "filepath.ext" =  { id = 00000000 }

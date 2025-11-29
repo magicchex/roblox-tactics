@@ -1,0 +1,27 @@
+name: selene
+
+on:
+  pull_request:
+    branches:
+      - master
+    paths: ["src/**/*.luau"]
+env:
+  SOURCE_FOLDER: src
+  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+jobs:
+  selene:
+    runs-on: ubuntu-22.04
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Install Rokit
+        uses: CompeyDev/setup-rokit@v0.1.2
+        with:
+          version: v1.0.0 # rokit git tag
+          cache: false
+
+      - name: Install Rokit Tools
+        run: rokit install --no-trust-check
+
+      - name: selene
+        run: selene $SOURCE_FOLDER
