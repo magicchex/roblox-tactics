@@ -49,6 +49,12 @@
         "FilteringEnabled": true
       }
     },
+    "Players": {
+      "$className": "Players",
+      "$properties": {
+        "CharacterAutoLoads": false
+      }
+    },
     "Lighting": {
       "$className": "Lighting",
       "$properties": {
