@@ -29,4 +29,6 @@ out
 # Asphalt
 .asphalt-debug
 
+# Personal Settings
 **/src/server
+.vscode/settings.json
