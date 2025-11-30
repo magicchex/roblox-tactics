@@ -22,6 +22,21 @@
             "label": "Publish - Docs",
             "type": "shell",
             "command": "python python/build_docs.py -P"
+        },
+        {
+            "label": "Build - Places",
+            "type": "shell",
+            "command": "python python/build_places.py"
+        },
+        {
+            "label": "Dev - Place",
+            "type": "shell",
+            "command": "python python/build_places.py -d"
+        },
+        {
+            "label": "Publish - Places",
+            "type": "shell",
+            "command": "python python/build_places.py -P ${env:RBXCLOUD_API_KEY}"
         }
     ],
     "inputs": []
