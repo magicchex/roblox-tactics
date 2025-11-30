@@ -108,9 +108,7 @@ if __name__ == "__main__":
         vs_content[LUAU_ROJO_SETTING] = selected_project
         with open(DOT_VSCODE, "w") as f:
             f.write(json.dumps(vs_content, indent=DOT_VSCODE_INDENT))
-        subprocess.run(
-            f'rojo build -o "{os.path.join(ARGS.out_dir,name+FILE_EXT)}" --watch "{selected_project}"'
-        )
+        subprocess.run(f'rojo serve "{selected_project}"')
         sys.exit(0)
 
     mchexio.do_projects(ARGS.places, build_place)
