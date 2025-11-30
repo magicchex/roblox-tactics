@@ -65,5 +65,6 @@
     ".luaurc": false,
     "asphalt.lock.toml": false
   },
-  "taskManager.exclude": "^__"
+  "taskManager.exclude": "^__",
+  "luau-lsp.sourcemap.rojoProjectFile": "places/Landing/default.project.json"
 }

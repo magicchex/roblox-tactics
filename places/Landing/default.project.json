@@ -1,7 +1,7 @@
 {
-  "name": "Roblox Tactics",
-  "gameId": 8922612473,
-  "placeId": 83437755688250,
+  "name": "Landing",
+  "gameId": 9266237974,
+  "placeId": 115261880123122,
   "globIgnorePaths": [
     "**/.gitkeep",
     "**/*.test*"
